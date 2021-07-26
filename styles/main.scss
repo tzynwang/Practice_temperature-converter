@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
 
 $light: #F5F5F5;
-$gray: #C9C9C9;
+$gray-400: #C9C9C9;
+$gray-600: #818181;
 $dark: #080017;
-$highlight: #FF0D70;
+$highlight-400: #FF0D70;
+$highlight-600: #ec0056;
 $sub: #CCA163;
 $white: #fff;
 $black: #000;
@@ -32,17 +34,23 @@ body {
   justify-content: center;
   align-items: center;
 
-  background-color: $gray;
+  background-color: $gray-400;
   font-family: 'Zen Loop', cursive;
 }
 
 #app {
   width: 100vw;
   background-color: $sub;
+  transition: .2s;
+
+  &:hover {
+    transform: translate(-8px, -8px);
+    box-shadow: 8px 8px 0 1px $gray-600;
+  }
 }
 
 .app__input {
-  background-color: $highlight;
+  background-color: $highlight-400;
 }
 
 .app__input__number {
@@ -76,6 +84,10 @@ body {
 
   label {
     cursor: pointer;
+    transition: .2s;
+  }
+  label:hover {
+    transform: translateY(-4px);
   }
 
   input[type='radio'] {
@@ -123,10 +135,28 @@ body {
     // reset input style
     @extend %resetInputStyle;
     // reset end
+    position: relative;
+    overflow: hidden;
     font-family: inherit;
     text-transform: uppercase;
-    background-color: $highlight;
+    background-color: $highlight-400;
     cursor: pointer;
+  }
+  &.copy::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transform: skewX(-30deg);
+    background-color: $highlight-600;
+    opacity: 0;
+    transition: .2s;
+  }
+  &.copy:hover::before {
+    left: 80%;
+    opacity: 1;
   }
 }
 

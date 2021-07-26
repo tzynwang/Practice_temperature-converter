@@ -34,6 +34,15 @@ body {
 #app {
   width: 100vw;
   background-color: #CCA163;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+#app:hover {
+  -webkit-transform: translate(-8px, -8px);
+          transform: translate(-8px, -8px);
+  -webkit-box-shadow: 8px 8px 0 1px #818181;
+          box-shadow: 8px 8px 0 1px #818181;
 }
 
 .app__input {
@@ -72,6 +81,13 @@ body {
 
 .app__input__radio-group label {
   cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.app__input__radio-group label:hover {
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
 }
 
 .app__input__radio-group input[type='radio'] {
@@ -119,10 +135,32 @@ body {
 }
 
 .app__output__item.copy {
+  position: relative;
+  overflow: hidden;
   font-family: inherit;
   text-transform: uppercase;
   background-color: #FF0D70;
   cursor: pointer;
+}
+
+.app__output__item.copy::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  -webkit-transform: skewX(-30deg);
+          transform: skewX(-30deg);
+  background-color: #ec0056;
+  opacity: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.app__output__item.copy:hover::before {
+  left: 80%;
+  opacity: 1;
 }
 
 @media screen and (min-width: 576px) {
