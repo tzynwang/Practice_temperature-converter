@@ -1,4 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap");
+.app__input__number, .app__output__item.copy {
+  border: none;
+  outline: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -18,23 +27,24 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #C9C9C9;
   font-family: 'Zen Loop', cursive;
 }
 
 #app {
   width: 100vw;
+  background-color: #CCA163;
+}
+
+.app__input {
+  background-color: #FF0D70;
 }
 
 .app__input__number {
   width: 100%;
   height: 84px;
   padding-left: 1rem;
-  border: none;
-  outline: none;
-  background-image: none;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  background-color: #F5F5F5;
   font-size: 3rem;
   font-family: inherit;
 }
@@ -109,31 +119,30 @@ body {
 }
 
 .app__output__item.copy {
-  border: none;
-  outline: none;
-  background-image: none;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  box-shadow: none;
   font-family: inherit;
   text-transform: uppercase;
   background-color: #FF0D70;
   cursor: pointer;
 }
 
-body {
-  background-color: #C9C9C9;
+@media screen and (min-width: 576px) {
+  #app {
+    width: 320px;
+  }
 }
 
-#app {
-  background-color: #CCA163;
-}
-
-.app__input {
-  background-color: #FF0D70;
-}
-
-input[type='number'] {
-  background-color: #F5F5F5;
+@media screen and (min-width: 992px) {
+  #app {
+    width: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .app__input {
+    min-width: 320px;
+  }
+  .app__output {
+    width: 320px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -8,6 +8,16 @@ $sub: #CCA163;
 $white: #fff;
 $black: #000;
 
+%resetInputStyle {
+  border: none;
+  outline: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,11 +32,17 @@ body {
   justify-content: center;
   align-items: center;
 
+  background-color: $gray;
   font-family: 'Zen Loop', cursive;
 }
 
 #app {
   width: 100vw;
+  background-color: $sub;
+}
+
+.app__input {
+  background-color: $highlight;
 }
 
 .app__input__number {
@@ -34,14 +50,9 @@ body {
   height: 84px;
   padding-left: 1rem;
   // reset input style
-  border: none;
-  outline: none;
-  background-image: none;
-  background-color: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
+  @extend %resetInputStyle;
   // reset end
+  background-color: $light;
   font-size: 3rem;
   font-family: inherit;
 }
@@ -110,13 +121,7 @@ body {
 
   &.copy {
     // reset input style
-    border: none;
-    outline: none;
-    background-image: none;
-    background-color: transparent;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
+    @extend %resetInputStyle;
     // reset end
     font-family: inherit;
     text-transform: uppercase;
@@ -125,16 +130,23 @@ body {
   }
 }
 
-// test usage
-body {
-  background-color: $gray;
+@media screen and (min-width: 576px) {
+  #app {
+    width: 320px;
+  }
 }
-#app {
-  background-color: $sub;
-}
-.app__input {
-  background-color: $highlight;
-}
-input[type='number'] {
-  background-color: $light
+
+@media screen and (min-width: 992px) {
+  #app {
+    width: auto;
+    display: flex;
+  }
+
+  .app__input {
+    min-width: 320px;
+  }
+
+  .app__output {
+    width: 320px;
+  }
 }
