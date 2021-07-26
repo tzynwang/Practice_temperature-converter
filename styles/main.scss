@@ -63,11 +63,41 @@ body {
   background-color: $light;
   font-size: 3rem;
   font-family: inherit;
+
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  &--wrapper {
+    position: relative;
+  }
+
+  &--wrapper::after {
+    content: 'X';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    z-index: 1;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    font-size: 3rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: .2s;
+  }
+
+  &--wrapper:hover::after {
+    opacity: 1;
+  }
 }
 
-.app__input__number::-webkit-inner-spin-button {
-  display: none;
-}
+// .app__input__number::-webkit-inner-spin-button {
+//   display: none;
+// }
 
 .app__input__radio-group {
   width: 100%;

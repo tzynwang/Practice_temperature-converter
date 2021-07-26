@@ -12313,6 +12313,9 @@ const app = new Vue({
       } else {
         event.preventDefault()
       }
+    },
+    clearInput () {
+      this.input = ''
     }
   },
   computed: {

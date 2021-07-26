@@ -62,6 +62,37 @@ body {
   display: none;
 }
 
+.app__input__number--wrapper {
+  position: relative;
+}
+
+.app__input__number--wrapper::after {
+  content: 'X';
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.app__input__number--wrapper:hover::after {
+  opacity: 1;
+}
+
 .app__input__radio-group {
   width: 100%;
   height: 84px;
