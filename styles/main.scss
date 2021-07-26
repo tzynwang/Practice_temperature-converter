@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+$light: #F5F5F5;
+$gray: #C9C9C9;
+$dark: #080017;
+$highlight: #FF0D70;
+$sub: #CCA163;
+$white: #fff;
+$black: #000;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Zen Loop', cursive;
+}
+
+#app {
+  width: 100vw;
+}
+
+.app__input__number {
+  width: 100%;
+  height: 84px;
+  padding-left: 1rem;
+  // reset input style
+  border: none;
+  outline: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  // reset end
+  font-size: 3rem;
+  font-family: inherit;
+}
+
+.app__input__number::-webkit-inner-spin-button {
+  display: none;
+}
+
+.app__input__radio-group {
+  width: 100%;
+  height: 84px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 1rem;
+
+  font-size: 2rem;
+  color: $white;
+
+  label {
+    cursor: pointer;
+  }
+
+  input[type='radio'] {
+    display: none;
+  }
+
+  input[type='radio']:checked+label {
+    border-bottom: 1px solid $white;
+  }
+}
+
+.app__output {
+  width: 100%;
+  height: calc(84px * 2);
+
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: repeat(2, 84px);
+}
+
+.app__output__item {
+  width: 100%;
+  height: 84px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 1rem;
+
+  font-size: 1.5rem;
+  text-align: center;
+
+  &.fahrenheit,
+  &.kelvin {
+    background-color: $light;
+  }
+
+  &.celsius,
+  &.copy {
+    color: $white;
+  }
+
+  &.copy {
+    // reset input style
+    border: none;
+    outline: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    // reset end
+    font-family: inherit;
+    text-transform: uppercase;
+    background-color: $highlight;
+    cursor: pointer;
+  }
+}
+
+// test usage
+body {
+  background-color: $gray;
+}
+#app {
+  background-color: $sub;
+}
+.app__input {
+  background-color: $highlight;
+}
+input[type='number'] {
+  background-color: $light
+}
