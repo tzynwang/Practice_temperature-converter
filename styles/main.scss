@@ -38,6 +38,39 @@ body {
   font-family: 'Zen Loop', cursive;
 }
 
+.GitHub {
+  width: 360px;
+  height: 36px;
+
+  position: fixed;
+  top: 30px;
+  right: -120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: $white;
+  text-decoration: none;
+  background-color: $sub;
+  transform: rotate(40deg);
+  transition: .2s;
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 13%;
+    border: 1px dashed $white;
+  }
+
+  &:hover {
+    transform: rotate(40deg) translate(-4px, -4px);
+    box-shadow: 8px 8px 0 1px $gray-600;
+  }
+}
+
 #app {
   width: 100vw;
   background-color: $sub;
@@ -94,10 +127,6 @@ body {
     opacity: 1;
   }
 }
-
-// .app__input__number::-webkit-inner-spin-button {
-//   display: none;
-// }
 
 .app__input__radio-group {
   width: 100%;
