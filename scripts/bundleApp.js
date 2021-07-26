@@ -12294,6 +12294,17 @@ const app = new Vue({
     fahrenheit: '',
     kelvin: ''
   },
+  methods: {
+    async copyResult () {
+      const text = `Celsius: ${this.toCelsius}°C
+      Fahrenheit: ${this.toFahrenheit}°F
+      Kelvin: ${this.toKelvin}K`
+      await navigator.clipboard.writeText(text)
+      window.alert(`
+      Has copied to clipboard:
+      ${text}`)
+    }
+  },
   computed: {
     toCelsius () {
       if (this.type === 'fahrenheit') {
