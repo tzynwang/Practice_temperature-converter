@@ -13,7 +13,8 @@
 <body>
   <div id="app">
     <div class="app__input">
-      <input type="number" class="app__input__number" :autofocus="'autofocus'" v-model="input">
+      <input type="number" class="app__input__number" :autofocus="'autofocus'" v-model="input"
+        @keydown="onlyNumber($event)">
       <div class="app__input__radio-group">
         <input type="radio" name="type" id="celsius" value="celsius" v-model="type">
         <label for="celsius">celsius</label>

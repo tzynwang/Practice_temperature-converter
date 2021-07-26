@@ -19,6 +19,16 @@ const app = new Vue({
       window.alert(`
       Has copied to clipboard:
       ${text}`)
+    },
+    onlyNumber (event) {
+      // const reg = /^-?[0-9]+$/
+      // 96-105, 8(backspace), 109(-), 37-40(方向)
+      const keyCode = event.keyCode
+      if (keyCode === 8 || (keyCode >= 96 && keyCode <= 105) || keyCode === 109 || (keyCode >= 34 && keyCode <= 40)) {
+        return true
+      } else {
+        event.preventDefault()
+      }
     }
   },
   computed: {
@@ -53,7 +63,7 @@ const app = new Vue({
   filters: {
     floatPointTwo (value) {
       if (Number(value) % 1 === 0) {
-        return value
+        return Number(value)
       } else {
         return Number(value).toFixed(2)
       }
