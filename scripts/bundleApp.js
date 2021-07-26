@@ -12306,9 +12306,12 @@ const app = new Vue({
     },
     onlyNumber (event) {
       // const reg = /^-?[0-9]+$/
-      // 96-105, 8(backspace), 109(-), 37-40(方向)
+      // backspace: 8
+      // -: 109, 189
+      // direction: 37-40
+      // numbers: 48-57, 96-105
       const keyCode = event.keyCode
-      if (keyCode === 8 || (keyCode >= 96 && keyCode <= 105) || keyCode === 109 || (keyCode >= 34 && keyCode <= 40)) {
+      if (keyCode === 8 || keyCode === 109 || keyCode === 189 || (keyCode >= 37 && keyCode <= 40) || (keyCode >= 48 && keyCode <= 57) || (keyCode >= 96 && keyCode <= 105)) {
         return true
       } else {
         event.preventDefault()
