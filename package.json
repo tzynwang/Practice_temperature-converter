@@ -4,13 +4,11 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "bundle": "browserify scripts/src/app.js > scripts/bundleApp.js",
     "watch": "watchify scripts/src/app.js -o scripts/bundleApp.js"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^17.0.0",
     "vue": "^2.6.14",
     "watchify": "^4.0.0"
   }
