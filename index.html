@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+</head>
+
+<body>
+  <div id="app">
+    <div class="app__input">
+      <input type="number" :autofocus="'autofocus'" v-model="input">
+      <div>
+        <input type="radio" name="type" id="celsius" value="celsius" v-model="type">
+        <label for="celsius">celsius</label>
+        <input type="radio" name="type" id="fahrenheit" value="fahrenheit" v-model="type">
+        <label for="fahrenheit">fahrenheit</label>
+        <input type="radio" name="type" id="kelvin" value="kelvin" v-model="type">
+        <label for="kelvin">kelvin</label>
+      </div>
+    </div>
+    <div class="app__output">
+      <span class="app__output__item celsius">celsius: {{toCelsius | floatPointTwo}}°C</span>
+      <span class="app__output__item fahrenheit">fahrenheit: {{toFahrenheit | floatPointTwo}}°F</span>
+      <span class="app__output__item kelvin">kelvin: {{toKelvin | floatPointTwo}}K</span>
+      <span class="app__output__item copy">copy result</span>
+    </div>
+  </div>
+  <script src="./scripts/bundleApp.js"></script>
+</body>
+
+</html>
