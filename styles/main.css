@@ -32,25 +32,13 @@ body {
 }
 
 .GitHub {
-  width: 48px;
-  height: 48px;
+  width: 100vw;
+  height: 36px;
   position: fixed;
-  top: 48px;
-  right: 48px;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  right: 0;
+  bottom: 0;
   color: #fff;
   background-color: #FF0D70;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
   text-decoration: none;
   -webkit-transition: .2s;
   transition: .2s;
@@ -73,17 +61,14 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
 }
 
 .GitHub::after {
   content: '';
-  width: 150%;
-  height: 150%;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: -150%;
-  left: -150%;
+  left: -100%;
   -webkit-transform: skewX(-30deg);
           transform: skewX(-30deg);
   background-color: #ec0056;
@@ -92,16 +77,8 @@ body {
   transition: .2s;
 }
 
-.GitHub:hover {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-box-shadow: 8px 8px 0 1px #818181;
-          box-shadow: 8px 8px 0 1px #818181;
-}
-
 .GitHub:hover::after {
-  top: 0;
-  left: 57%;
+  left: 60%;
   opacity: 1;
 }
 
@@ -110,11 +87,6 @@ body {
   background-color: #CCA163;
   -webkit-transition: .2s;
   transition: .2s;
-}
-
-#app:hover {
-  -webkit-box-shadow: 8px 8px 0 1px #818181;
-          box-shadow: 8px 8px 0 1px #818181;
 }
 
 .app__fake-background {
@@ -286,8 +258,42 @@ body {
 }
 
 @media screen and (min-width: 576px) {
+  .GitHub {
+    width: 48px;
+    height: 48px;
+    top: 48px;
+    right: 48px;
+    overflow: hidden;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .GitHub::before {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .GitHub::after {
+    width: 150%;
+    height: 150%;
+    top: -150%;
+    left: -150%;
+  }
+  .GitHub:hover {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-box-shadow: 8px 8px 0 1px #818181;
+            box-shadow: 8px 8px 0 1px #818181;
+  }
+  .GitHub:hover::after {
+    top: 0;
+    left: 57%;
+    opacity: 1;
+  }
   #app {
     width: 320px;
+  }
+  #app:hover {
+    -webkit-box-shadow: 8px 8px 0 1px #818181;
+            box-shadow: 8px 8px 0 1px #818181;
   }
 }
 

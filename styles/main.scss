@@ -39,21 +39,15 @@ body {
 }
 
 .GitHub {
-  width: 48px;
-  height: 48px;
+  width: 100vw;
+  height: 36px;
 
   position: fixed;
-  top: 48px;
-  right: 48px;
-  overflow: hidden;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  right: 0;
+  bottom: 0;
 
   color: $white;
   background-color: $highlight-400;
-  transform: rotate(45deg);
   text-decoration: none;
   transition: .2s;
 
@@ -68,29 +62,22 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: rotate(-45deg);
   }
 
   &::after {
     content: '';
-    width: 150%;
-    height: 150%;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: -150%;
-    left: -150%;
+    left: -100%;
     transform: skewX(-30deg);
     background-color: $highlight-600;
     opacity: 0;
     transition: .2s;
   }
 
-  &:hover {
-    transform: rotate(45deg);
-    box-shadow: 8px 8px 0 1px $gray-600;
-  }
   &:hover::after {
-    top: 0;
-    left: 57%;
+    left: 60%;
     opacity: 1;
   }
 }
@@ -99,10 +86,6 @@ body {
   width: 100vw;
   background-color: $sub;
   transition: .2s;
-
-  &:hover {
-    box-shadow: 8px 8px 0 1px $gray-600;
-  }
 }
 
 .app__fake-background {
@@ -262,8 +245,44 @@ body {
 }
 
 @media screen and (min-width: 576px) {
+  .GitHub {
+    width: 48px;
+    height: 48px;
+
+    top: 48px;
+    right: 48px;
+    overflow: hidden;
+
+    transform: rotate(45deg);
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      width: 150%;
+      height: 150%;
+      top: -150%;
+      left: -150%;
+    }
+
+    &:hover {
+      transform: rotate(45deg);
+      box-shadow: 8px 8px 0 1px $gray-600;
+    }
+
+    &:hover::after {
+      top: 0;
+      left: 57%;
+      opacity: 1;
+    }
+  }
+
   #app {
     width: 320px;
+    &:hover {
+      box-shadow: 8px 8px 0 1px $gray-600;
+    }
   }
 }
 
