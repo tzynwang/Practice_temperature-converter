@@ -39,35 +39,59 @@ body {
 }
 
 .GitHub {
-  width: 360px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
 
   position: fixed;
-  top: 30px;
-  right: -120px;
+  top: 48px;
+  right: 48px;
+  overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   color: $white;
+  background-color: $highlight-400;
+  transform: rotate(45deg);
   text-decoration: none;
-  background-color: $sub;
-  transform: rotate(40deg);
   transition: .2s;
 
   &::before {
-    content: '';
+    content: 'GitHub';
     width: 100%;
-    height: 70%;
+    height: 100%;
     position: absolute;
-    top: 13%;
-    border: 1px dashed $white;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    content: '';
+    width: 150%;
+    height: 150%;
+    position: absolute;
+    top: -150%;
+    left: -150%;
+    transform: skewX(-30deg);
+    background-color: $highlight-600;
+    opacity: 0;
+    transition: .2s;
   }
 
   &:hover {
-    transform: rotate(40deg) translate(-4px, -4px);
+    transform: rotate(45deg);
     box-shadow: 8px 8px 0 1px $gray-600;
+  }
+  &:hover::after {
+    top: 0;
+    left: 57%;
+    opacity: 1;
   }
 }
 
@@ -224,6 +248,16 @@ body {
   &.copy:hover::before {
     left: 80%;
     opacity: 1;
+  }
+
+  // style by selected type
+  &.selected {
+    background-color: $sub;
+    color: $white;
+  }
+  &.not-selected {
+    background-color: $light;
+    color: $black;
   }
 }
 
