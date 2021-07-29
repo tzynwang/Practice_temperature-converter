@@ -275,6 +275,16 @@ body {
   opacity: 1;
 }
 
+.app__output__item.selected {
+  background-color: #CCA163;
+  color: #fff;
+}
+
+.app__output__item.not-selected {
+  background-color: #F5F5F5;
+  color: #000;
+}
+
 @media screen and (min-width: 576px) {
   #app {
     width: 320px;

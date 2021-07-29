@@ -249,6 +249,16 @@ body {
     left: 80%;
     opacity: 1;
   }
+
+  // style by selected type
+  &.selected {
+    background-color: $sub;
+    color: $white;
+  }
+  &.not-selected {
+    background-color: $light;
+    color: $black;
+  }
 }
 
 @media screen and (min-width: 576px) {

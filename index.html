@@ -29,9 +29,15 @@
       </div>
     </div>
     <div class="app__output">
-      <span class="app__output__item celsius">celsius: {{toCelsius | floatPointTwo}}°C</span>
-      <span class="app__output__item fahrenheit">fahrenheit: {{toFahrenheit | floatPointTwo}}°F</span>
-      <span class="app__output__item kelvin">kelvin: {{toKelvin | floatPointTwo}}K</span>
+      <span
+        :class="['app__output__item', 'celsius', {'selected': type === 'celsius', 'not-selected': type !== 'celsius'}]">celsius:
+        {{toCelsius | floatPointTwo}}°C</span>
+      <span
+      :class="['app__output__item', 'fahrenheit', {'selected': type === 'fahrenheit', 'not-selected': type !== 'fahrenheit'}]">fahrenheit:
+        {{toFahrenheit | floatPointTwo}}°F</span>
+      <span
+      :class="['app__output__item', 'kelvin', {'selected': type === 'kelvin', 'not-selected': type !== 'kelvin'}]">kelvin:
+        {{toKelvin | floatPointTwo}}K</span>
       <button class="app__output__item copy" @click="copyResult">copy result</button>
     </div>
   </div>
