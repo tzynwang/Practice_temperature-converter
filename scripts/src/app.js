@@ -64,6 +64,20 @@ const app = new Vue({
         return (Number(this.input - 32) * 5 / 9) + 273.15
       }
       return this.input
+    },
+    changeBgColorByInput () {
+      const input = Number(this.input)
+      if (isNaN(input) || input === 0) {
+        return 'rgb(201, 201, 201)'
+      }
+      if (input > 0) {
+        const r = input > 54 ? 54 : input
+        return `rgb(${201 + r}, 201, 201)`
+      }
+      if (input < 0) {
+        const b = input <= -54 ? -54 : input
+        return `rgb(201, 201, ${201 - b})`
+      }
     }
   },
   filters: {
