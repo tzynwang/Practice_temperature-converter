@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
 
 $light: #F5F5F5;
-$gray-400: #C9C9C9;
+$gray-400: #C9C9C9; // 201, 201, 201
 $gray-600: #818181;
 $dark: #080017;
 $highlight-400: #FF0D70;
@@ -77,9 +77,17 @@ body {
   transition: .2s;
 
   &:hover {
-    transform: translate(-8px, -8px);
     box-shadow: 8px 8px 0 1px $gray-600;
   }
+}
+
+.app__fake-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -999;
 }
 
 .app__input {

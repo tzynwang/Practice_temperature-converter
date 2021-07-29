@@ -79,10 +79,17 @@ body {
 }
 
 #app:hover {
-  -webkit-transform: translate(-8px, -8px);
-          transform: translate(-8px, -8px);
   -webkit-box-shadow: 8px 8px 0 1px #818181;
           box-shadow: 8px 8px 0 1px #818181;
+}
+
+.app__fake-background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -999;
 }
 
 .app__input {
