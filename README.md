@@ -1,5 +1,7 @@
 # 練習專案：溫度轉換器
 
+專案展示：https://tzynwang.github.io/Practice_temperature-converter/
+
 ![demo gif](./.README/demo.gif)
 
 # 框架
